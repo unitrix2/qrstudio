@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QR Studio Pro • Ultimate Designer QR Code Generator</title>
+  <meta name="description" content="Generate designer QR codes with custom rounded corners, dot patterns, eye frames, gradients, center logos, and stylish SCAN ME badges. Export in 4K PNG, SVG, and PDF.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script type="module" crossorigin src="./assets/main-7092iYu8.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/main-DYHBcJdg.css">
+</head>
+<body>
+  <!-- Ambient Gradient Background Orbs -->
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+
+  <!-- Header -->
+  <header class="studio-header">
+    <div class="header-left">
+      <div class="brand-logo">
+        <div class="brand-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect width="6" height="6" x="3" y="3" rx="1.5"></rect>
+            <rect width="6" height="6" x="15" y="3" rx="1.5"></rect>
+            <rect width="6" height="6" x="3" y="15" rx="1.5"></rect>
+            <path d="M15 15h2v2h-2z"></path>
+            <path d="M19 15v4h2"></path>
+            <path d="M15 19v2"></path>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-title">QR Studio<span class="pro-tag">PRO</span></span>
+          <span class="brand-subtitle">Designer QR Engine</span>
+        </div>
+      </div>
+
+      <!-- Creator Ribbon (Slim Horizontal) -->
+      <div class="creator-ribbon" title="Architect & Lead Developer: Salman">
+        <span class="cr-dot"></span>
+        <span class="cr-label">Built by</span>
+        <strong class="cr-name">Salman</strong>
+        <span class="cr-tag">PRO</span>
+      </div>
+    </div>
+
+    <!-- Quick Tool Action Bar -->
+    <div class="header-actions">
+      <button id="btn-open-presets" class="btn-tool" title="Browse Designer Presets">
+        <span class="tool-icon">✨</span>
+        <span class="tool-label">Presets</span>
+      </button>
+
+      <button id="btn-open-scanner" class="btn-tool" title="Scan or Verify QR Codes">
+        <span class="tool-icon">📷</span>
+        <span class="tool-label">QR Scanner</span>
+      </button>
+
+      <button id="btn-open-batch" class="btn-tool" title="Batch QR Generator">
+        <span class="tool-icon">⚡</span>
+        <span class="tool-label">Batch Zip</span>
+      </button>
+
+      <button id="btn-open-saved" class="btn-tool" title="View Saved Designs">
+        <span class="tool-icon">📁</span>
+        <span class="tool-label">My Designs</span>
+      </button>
+
+      <div class="divider-v"></div>
+
+      <!-- Health Status Badge -->
+      <div id="health-badge" class="health-badge" title="Live Scanability Diagnostic">
+        <span class="health-dot"></span>
+        <span id="health-text" class="health-text">100% Scan Safe</span>
+      </div>
+
+      <!-- Theme Switcher -->
+      <button id="theme-toggle" class="btn-icon" title="Toggle Light/Dark Theme" aria-label="Toggle Theme">
+        <span id="theme-icon">🌙</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Studio Workspace -->
+  <main class="studio-workspace">
+    
+    <!-- LEFT PANEL: CUSTOMIZATION ENGINE -->
+    <section class="studio-panel controls-panel">
+      <!-- Navigation Tabs -->
+      <nav class="nav-tabs" role="tablist">
+        <button class="nav-tab active" data-tab="tab-content">
+          <span class="tab-emoji">🔗</span>
+          <span>1. Content</span>
+        </button>
+        <button class="nav-tab" data-tab="tab-shapes">
+          <span class="tab-emoji">🧩</span>
+          <span>2. Shapes & Dots</span>
+        </button>
+        <button class="nav-tab" data-tab="tab-colors">
+          <span class="tab-emoji">🎨</span>
+          <span>3. Colors</span>
+        </button>
+        <button class="nav-tab" data-tab="tab-logo">
+          <span class="tab-emoji">🖼️</span>
+          <span>4. Center Logo</span>
+        </button>
+        <button class="nav-tab" data-tab="tab-frame">
+          <span class="tab-emoji">🖼️</span>
+          <span>5. Frame & Badge</span>
+        </button>
+      </nav>
+
+      <div class="tabs-container">
+        <!-- ================= TAB 1: CONTENT TYPE ================= -->
+        <div id="tab-content" class="tab-pane active">
+          <div class="section-title">
+            <h3>Choose Content Type</h3>
+            <p>Select the payload format to encode into your QR code.</p>
+          </div>
+
+          <!-- Type Selector Pills Grid -->
+          <div class="content-types-grid">
+            <button class="type-pill active" data-type="url">
+              <span class="pill-icon">🌐</span>
+              <span class="pill-name">Website / Link</span>
+            </button>
+            <button class="type-pill" data-type="text">
+              <span class="pill-icon">📝</span>
+              <span class="pill-name">Plain Text</span>
+            </button>
+            <button class="type-pill" data-type="wifi">
+              <span class="pill-icon">📶</span>
+              <span class="pill-name">Wi-Fi Connect</span>
+            </button>
+            <button class="type-pill" data-type="upi">
+              <span class="pill-icon">💳</span>
+              <span class="pill-name">UPI Payment</span>
+            </button>
+            <button class="type-pill" data-type="vcard">
+              <span class="pill-icon">👤</span>
+              <span class="pill-name">vCard Contact</span>
+            </button>
+            <button class="type-pill" data-type="whatsapp">
+              <span class="pill-icon">💬</span>
+              <span class="pill-name">WhatsApp</span>
+            </button>
+            <button class="type-pill" data-type="email">
+              <span class="pill-icon">✉️</span>
+              <span class="pill-name">Email</span>
+            </button>
+            <button class="type-pill" data-type="phone">
+              <span class="pill-icon">📞</span>
+              <span class="pill-name">Phone Call</span>
+            </button>
+            <button class="type-pill" data-type="sms">
+              <span class="pill-icon">📱</span>
+              <span class="pill-name">SMS Message</span>
+            </button>
+            <button class="type-pill" data-type="event">
+              <span class="pill-icon">📅</span>
+              <span class="pill-name">Calendar Event</span>
+            </button>
+            <button class="type-pill" data-type="crypto">
+              <span class="pill-icon">🪙</span>
+              <span class="pill-name">Crypto Pay</span>
+            </button>
+            <button class="type-pill" data-type="social">
+              <span class="pill-icon">🔗</span>
+              <span class="pill-name">Social Profile</span>
+            </button>
+          </div>
+
+          <!-- Dynamic Form Inputs -->
+          <div id="dynamic-content-form" class="content-form-card">
+            <!-- Rendered by main.js based on selected type -->
+          </div>
+        </div>
+
+        <!-- ================= TAB 2: SHAPES & PATTERNS ================= -->
+        <div id="tab-shapes" class="tab-pane">
+          <div class="section-title">
+            <h3>Designer Shapes & Module Patterns</h3>
+            <p>Customize every corner, dot module, and alignment square.</p>
+          </div>
+
+          <!-- Body Dots Pattern -->
+          <div class="form-group">
+            <label class="group-label">Body Modules (Dots Style)</label>
+            <div class="shape-selector-grid" id="dots-type-selector">
+              <div class="shape-card active" data-val="rounded">
+                <div class="shape-preview shape-rounded"></div>
+                <span class="shape-label">Rounded</span>
+              </div>
+              <div class="shape-card" data-val="dots">
+                <div class="shape-preview shape-dots"></div>
+                <span class="shape-label">Dots / Circles</span>
+              </div>
+              <div class="shape-card" data-val="classy">
+                <div class="shape-preview shape-classy"></div>
+                <span class="shape-label">Classy Leaf</span>
+              </div>
+              <div class="shape-card" data-val="classy-rounded">
+                <div class="shape-preview shape-classy-rounded"></div>
+                <span class="shape-label">Classy Smooth</span>
+              </div>
+              <div class="shape-card" data-val="extra-rounded">
+                <div class="shape-preview shape-extra-rounded"></div>
+                <span class="shape-label">Squircle</span>
+              </div>
+              <div class="shape-card" data-val="square">
+                <div class="shape-preview shape-square"></div>
+                <span class="shape-label">Classic Square</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Corner Square (Outer Eye Frame) -->
+          <div class="form-group">
+            <label class="group-label">Eye Outer Frame (Corner Squares)</label>
+            <div class="shape-selector-grid grid-3" id="corners-square-selector">
+              <div class="shape-card active" data-val="extra-rounded">
+                <div class="eye-outer-preview eye-extra-rounded"></div>
+                <span class="shape-label">Extra Rounded</span>
+              </div>
+              <div class="shape-card" data-val="dot">
+                <div class="eye-outer-preview eye-dot"></div>
+                <span class="shape-label">Circular Circle</span>
+              </div>
+              <div class="shape-card" data-val="square">
+                <div class="eye-outer-preview eye-square"></div>
+                <span class="shape-label">Square Geometric</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Corner Dot (Inner Pupil) -->
+          <div class="form-group">
+            <label class="group-label">Eye Inner Pupil (Corner Dot)</label>
+            <div class="shape-selector-grid grid-2" id="corners-dot-selector">
+              <div class="shape-card active" data-val="dot">
+                <div class="eye-inner-preview pupil-dot"></div>
+                <span class="shape-label">Circular Dot</span>
+              </div>
+              <div class="shape-card" data-val="square">
+                <div class="eye-inner-preview pupil-square"></div>
+                <span class="shape-label">Square Block</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Fine Adjustments: Quiet Zone & Error Correction -->
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label class="group-label" for="slider-margin">
+                <span>Quiet Zone / Margin</span>
+                <span id="label-margin" class="val-pill">12px</span>
+              </label>
+              <input type="range" id="slider-margin" min="0" max="40" value="12" class="slider-input">
+            </div>
+
+            <div class="form-group">
+              <label class="group-label" for="select-ec">
+                <span>Error Correction</span>
+                <span class="val-pill" id="label-ec">High (H 30%)</span>
+              </label>
+              <select id="select-ec" class="select-input">
+                <option value="L">L - Low (7%) Dense</option>
+                <option value="M">M - Medium (15%) Standard</option>
+                <option value="Q">Q - Quartile (25%) High</option>
+                <option value="H" selected>H - High (30%) Logo Safe</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- ================= TAB 3: COLORS & GRADIENTS ================= -->
+        <div id="tab-colors" class="tab-pane">
+          <div class="section-title">
+            <h3>Palette, Colors & Radiant Gradients</h3>
+            <p>Customize solid colors, multi-stop gradients, eye colors and backgrounds.</p>
+          </div>
+
+          <!-- Quick Curated Swatches -->
+          <div class="form-group">
+            <label class="group-label">One-Click Color Swatches</label>
+            <div class="swatches-row" id="color-swatches-row">
+              <button class="color-swatch-btn" style="background: linear-gradient(135deg, #06b6d4, #ec4899);" title="Cyber Neon" data-c1="#06b6d4" data-c2="#ec4899" data-mode="gradient"></button>
+              <button class="color-swatch-btn" style="background: linear-gradient(135deg, #fbbf24, #d97706);" title="Champagne Gold" data-c1="#fbbf24" data-c2="#d97706" data-mode="gradient"></button>
+              <button class="color-swatch-btn" style="background: linear-gradient(135deg, #059669, #10b981);" title="Emerald Fintech" data-c1="#059669" data-c2="#10b981" data-mode="gradient"></button>
+              <button class="color-swatch-btn" style="background: linear-gradient(135deg, #f43f5e, #fb923c);" title="Sunset Coral" data-c1="#f43f5e" data-c2="#fb923c" data-mode="gradient"></button>
+              <button class="color-swatch-btn" style="background: linear-gradient(135deg, #8b5cf6, #6366f1);" title="Royal Amethyst" data-c1="#8b5cf6" data-c2="#6366f1" data-mode="gradient"></button>
+              <button class="color-swatch-btn" style="background: linear-gradient(135deg, #0284c7, #06b6d4);" title="Ocean Breeze" data-c1="#0284c7" data-c2="#06b6d4" data-mode="gradient"></button>
+              <button class="color-swatch-btn" style="background: #111827;" title="Minimal Dark" data-c1="#111827" data-c2="#111827" data-mode="single"></button>
+              <button class="color-swatch-btn" style="background: #4f46e5;" title="Indigo Glow" data-c1="#4f46e5" data-c2="#4f46e5" data-mode="single"></button>
+            </div>
+          </div>
+
+          <!-- Dots Color Controls -->
+          <div class="card-box">
+            <div class="box-header">
+              <span class="box-title">Body Dots Fill</span>
+              <div class="toggle-group" id="dots-color-mode-toggle">
+                <button class="toggle-btn active" data-val="single">Solid</button>
+                <button class="toggle-btn" data-val="gradient">Gradient</button>
+              </div>
+            </div>
+
+            <div class="colors-row">
+              <div class="color-field">
+                <label>Primary Color</label>
+                <div class="color-picker-wrap">
+                  <input type="color" id="input-dots-c1" value="#0f172a">
+                  <input type="text" id="input-dots-c1-text" value="#0f172a" class="hex-text">
+                </div>
+              </div>
+
+              <div class="color-field" id="wrap-dots-c2" style="display: none;">
+                <label>Gradient Stop 2</label>
+                <div class="color-picker-wrap">
+                  <input type="color" id="input-dots-c2" value="#ec4899">
+                  <input type="text" id="input-dots-c2-text" value="#ec4899" class="hex-text">
+                </div>
+              </div>
+            </div>
+
+            <!-- Gradient Options (Visible when gradient selected) -->
+            <div id="dots-gradient-options" class="gradient-options-row" style="display: none;">
+              <div class="form-group flex-1">
+                <label class="group-label">Gradient Type</label>
+                <div class="toggle-group" id="dots-grad-type-toggle">
+                  <button class="toggle-btn active" data-val="linear">Linear</button>
+                  <button class="toggle-btn" data-val="radial">Radial</button>
+                </div>
+              </div>
+
+              <div class="form-group flex-1" id="wrap-grad-angle">
+                <label class="group-label" for="slider-dots-angle">
+                  <span>Angle</span>
+                  <span id="label-dots-angle" class="val-pill">45°</span>
+                </label>
+                <input type="range" id="slider-dots-angle" min="0" max="360" value="45" class="slider-input">
+              </div>
+            </div>
+          </div>
+
+          <!-- Eye Framing Colors (Custom or Match Dots) -->
+          <div class="card-box">
+            <div class="box-header">
+              <span class="box-title">Eye Frames & Pupils</span>
+              <label class="checkbox-label">
+                <input type="checkbox" id="check-custom-eye-colors">
+                <span>Custom Eye Colors</span>
+              </label>
+            </div>
+
+            <div id="wrap-custom-eye-controls" class="colors-row" style="display: none;">
+              <div class="color-field">
+                <label>Outer Frame Color</label>
+                <div class="color-picker-wrap">
+                  <input type="color" id="input-eye-frame-c" value="#0f172a">
+                  <input type="text" id="input-eye-frame-c-text" value="#0f172a" class="hex-text">
+                </div>
+              </div>
+
+              <div class="color-field">
+                <label>Inner Pupil Color</label>
+                <div class="color-picker-wrap">
+                  <input type="color" id="input-eye-dot-c" value="#0f172a">
+                  <input type="text" id="input-eye-dot-c-text" value="#0f172a" class="hex-text">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Background Settings -->
+          <div class="card-box">
+            <div class="box-header">
+              <span class="box-title">Canvas Background</span>
+              <label class="checkbox-label">
+                <input type="checkbox" id="check-bg-transparent">
+                <span>Transparent Background</span>
+              </label>
+            </div>
+
+            <div id="wrap-bg-color-field" class="colors-row">
+              <div class="color-field">
+                <label>Background Color</label>
+                <div class="color-picker-wrap">
+                  <input type="color" id="input-bg-c" value="#ffffff">
+                  <input type="text" id="input-bg-c-text" value="#ffffff" class="hex-text">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ================= TAB 4: CENTER LOGO ================= -->
+        <div id="tab-logo" class="tab-pane">
+          <div class="section-title">
+            <h3>Center Logo & Branding Icons</h3>
+            <p>Embed official social brands or upload your own custom PNG/SVG logo.</p>
+          </div>
+
+          <!-- Built-in Icon Library -->
+          <div class="form-group">
+            <label class="group-label">Built-in Brand & Utility Icons</label>
+            <div class="preset-icons-grid" id="preset-icons-grid">
+              <!-- Rendered dynamically from icons.js -->
+            </div>
+          </div>
+
+          <!-- Custom File Upload Zone -->
+          <div class="form-group">
+            <label class="group-label">Or Upload Custom Logo / Watermark</label>
+            <div class="dropzone" id="logo-dropzone">
+              <input type="file" id="input-logo-file" accept="image/*" class="file-hidden">
+              <div class="dropzone-content">
+                <span class="drop-icon">📤</span>
+                <span class="drop-title">Drag & drop logo file here or <strong>browse</strong></span>
+                <span class="drop-sub">PNG, SVG, WEBP, or JPG (Recommended: Transparent PNG, square)</span>
+              </div>
+            </div>
+
+            <!-- Active Custom Logo Bar -->
+            <div id="active-custom-logo-bar" class="active-logo-preview" style="display: none;">
+              <img id="custom-logo-thumb" src="" alt="Custom Logo" class="thumb-img">
+              <div class="thumb-info">
+                <span id="custom-logo-name" class="thumb-filename">custom-logo.png</span>
+                <span class="thumb-status">Embedded in QR</span>
+              </div>
+              <button id="btn-remove-logo" class="btn-sm-danger">Remove</button>
+            </div>
+          </div>
+
+          <!-- Logo Fine Tuning Sliders -->
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label class="group-label" for="slider-logo-size">
+                <span>Logo Scale</span>
+                <span id="label-logo-size" class="val-pill">32%</span>
+              </label>
+              <input type="range" id="slider-logo-size" min="0.15" max="0.45" step="0.01" value="0.32" class="slider-input">
+            </div>
+
+            <div class="form-group">
+              <label class="group-label" for="slider-logo-margin">
+                <span>Logo Margin / Padding</span>
+                <span id="label-logo-margin" class="val-pill">6px</span>
+              </label>
+              <input type="range" id="slider-logo-margin" min="0" max="25" value="6" class="slider-input">
+            </div>
+          </div>
+
+          <div class="checkbox-row">
+            <label class="checkbox-label">
+              <input type="checkbox" id="check-hide-dots" checked>
+              <span>Hide background dots behind logo (cleaner look & higher contrast)</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- ================= TAB 5: FRAMES & BADGES ================= -->
+        <div id="tab-frame" class="tab-pane">
+          <div class="section-title">
+            <h3>Frames, Cards & Call-To-Action Badges</h3>
+            <p>Add "SCAN ME", "SCAN TO PAY", polaroid cards, and device frames.</p>
+          </div>
+
+          <!-- Frame Styles Grid -->
+          <div class="form-group">
+            <label class="group-label">Frame Style</label>
+            <div class="frame-selector-grid" id="frame-selector-grid">
+              <div class="frame-card active" data-val="none">
+                <div class="frame-thumb frame-thumb-none"></div>
+                <span class="frame-name">None (Pure QR)</span>
+              </div>
+              <div class="frame-card" data-val="bottom-banner">
+                <div class="frame-thumb frame-thumb-bottom"></div>
+                <span class="frame-name">Bottom Banner</span>
+              </div>
+              <div class="frame-card" data-val="top-banner">
+                <div class="frame-thumb frame-thumb-top"></div>
+                <span class="frame-name">Top Banner</span>
+              </div>
+              <div class="frame-card" data-val="bubble">
+                <div class="frame-thumb frame-thumb-bubble"></div>
+                <span class="frame-name">Floating Bubble</span>
+              </div>
+              <div class="frame-card" data-val="polaroid">
+                <div class="frame-thumb frame-thumb-polaroid"></div>
+                <span class="frame-name">Polaroid Card</span>
+              </div>
+              <div class="frame-card" data-val="phone">
+                <div class="frame-thumb frame-thumb-phone"></div>
+                <span class="frame-name">Phone Mockup</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Frame Text and Colors -->
+          <div id="wrap-frame-options" class="card-box" style="display: none;">
+            <div class="form-group">
+              <label class="group-label" for="input-frame-text">Call-To-Action Text</label>
+              <input type="text" id="input-frame-text" value="SCAN ME" class="text-input" placeholder="e.g. SCAN ME, SCAN TO PAY, CONNECT">
+            </div>
+
+            <div class="colors-row">
+              <div class="color-field">
+                <label>Frame / Banner Color</label>
+                <div class="color-picker-wrap">
+                  <input type="color" id="input-frame-color" value="#111827">
+                  <input type="text" id="input-frame-color-text" value="#111827" class="hex-text">
+                </div>
+              </div>
+
+              <div class="color-field">
+                <label>Text Color</label>
+                <div class="color-picker-wrap">
+                  <input type="color" id="input-frame-text-color" value="#ffffff">
+                  <input type="text" id="input-frame-text-color-text" value="#ffffff" class="hex-text">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RIGHT PANEL: LIVE STUDIO CANVAS & EXPORT DECK -->
+    <section class="studio-panel preview-panel">
+      <div class="preview-sticky-wrap">
+        <div class="preview-header">
+          <div class="preview-title-box">
+            <h2 class="preview-title">Live Preview Workstation</h2>
+            <span class="preview-subtitle">Sub-millisecond Real-Time Render</span>
+          </div>
+
+          <!-- Preview Backdrop Background Switcher -->
+          <div class="backdrop-controls" title="Change preview background context">
+            <button class="btn-backdrop active" data-mode="canvas-light">Light</button>
+            <button class="btn-backdrop" data-mode="canvas-dark">Dark</button>
+            <button class="btn-backdrop" data-mode="canvas-grid">Grid</button>
+          </div>
+        </div>
+
+        <!-- The Canvas Stage -->
+        <div class="canvas-stage canvas-light" id="canvas-stage">
+          <div class="qr-render-wrapper" id="qr-render-wrapper">
+            <!-- QR Code Render Canvas will be mounted here -->
+            <div id="qr-target-container"></div>
+          </div>
+        </div>
+
+        <!-- Live Scanability Diagnostics Card -->
+        <div class="diagnostics-card">
+          <div class="diag-item">
+            <span class="diag-label">Contrast Ratio:</span>
+            <span id="diag-contrast" class="diag-value safe">21.0 : 1 (AAA)</span>
+          </div>
+          <div class="diag-item">
+            <span class="diag-label">Error Correction:</span>
+            <span id="diag-ec" class="diag-value">Level H (30%)</span>
+          </div>
+          <div class="diag-item">
+            <span class="diag-label">Scan Safety:</span>
+            <span id="diag-score" class="diag-value safe">100% Guaranteed</span>
+          </div>
+        </div>
+
+        <!-- Export & Action Controls Deck -->
+        <div class="export-deck">
+          <div class="export-settings-row">
+            <div class="export-select-wrap">
+              <label for="export-format">Format:</label>
+              <select id="export-format" class="select-sm">
+                <option value="png" selected>PNG (High Res)</option>
+                <option value="svg">SVG (Vector Print)</option>
+                <option value="pdf">PDF (Print Certificate)</option>
+                <option value="jpeg">JPEG (Optimized)</option>
+                <option value="webp">WebP (Modern Web)</option>
+              </select>
+            </div>
+
+            <div class="export-select-wrap">
+              <label for="export-res">Resolution:</label>
+              <select id="export-res" class="select-sm">
+                <option value="512">512 px (Web)</option>
+                <option value="1024">1024 px (HD)</option>
+                <option value="2048" selected>2048 px (2K Pro)</option>
+                <option value="4000">4000 px (4K Print Ready)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Primary Download Button -->
+          <button id="btn-download-qr" class="btn-primary-action">
+            <span class="btn-icon-symbol">⬇️</span>
+            <span class="btn-text">Download QR Code</span>
+          </button>
+
+          <!-- Secondary Actions Row -->
+          <div class="secondary-actions-row">
+            <button id="btn-copy-clipboard" class="btn-secondary" title="Copy PNG image to clipboard">
+              <span>📋</span> Copy Image
+            </button>
+            <button id="btn-save-design" class="btn-secondary" title="Save this style to My Designs">
+              <span>💾</span> Save Style
+            </button>
+            <button id="btn-export-json" class="btn-secondary" title="Export Design JSON">
+              <span>⚙️</span> Export JSON
+            </button>
+          </div>
+
+          <!-- Preview Creator Signature -->
+          <div class="preview-creator-tag">
+            <span class="pct-dot"></span>
+            <span>Crafted with precision • Built by <strong class="pct-name">Salman</strong></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Studio Master Footer (Slim, Wide & Professional) -->
+  <footer class="studio-footer">
+    <div class="footer-strip">
+      <div class="fs-brand">
+        <div class="fs-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <rect width="6" height="6" x="3" y="3" rx="1.5"></rect>
+            <rect width="6" height="6" x="15" y="3" rx="1.5"></rect>
+            <rect width="6" height="6" x="3" y="15" rx="1.5"></rect>
+            <path d="M15 15h2v2h-2z"></path>
+            <path d="M19 15v4h2"></path>
+            <path d="M15 19v2"></path>
+          </svg>
+        </div>
+        <span class="fs-title">QR Studio <strong>PRO</strong></span>
+      </div>
+
+      <div class="fs-creator-bar" title="Architect & Lead Developer: Salman">
+        <span class="fs-avatar">S</span>
+        <span class="fs-creator-text">Architected & Built with ❤️ by <strong class="fs-creator-name">Salman</strong></span>
+        <span class="fs-badge">Engineering Lead</span>
+      </div>
+
+      <div class="fs-chips">
+        <span class="fs-chip">⚡ 100% Client-Side</span>
+        <span class="fs-chip">🔒 Zero Logs</span>
+        <span class="fs-chip">🚀 Ready to Deploy</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= MODAL 1: PRESETS DRAWER ================= -->
+  <div id="modal-presets" class="modal-backdrop">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-header">
+        <h3 class="modal-title">✨ Designer Presets & Templates</h3>
+        <button class="modal-close" data-close="modal-presets">✕</button>
+      </div>
+      <div class="modal-body">
+        <p class="modal-desc">Click any template to instantly load its handcrafted colors, dot patterns, corner shapes, and frame styling.</p>
+        <div class="presets-gallery-grid" id="presets-gallery-grid">
+          <!-- Rendered dynamically from presets.js -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= MODAL 2: QR SCANNER & TESTER ================= -->
+  <div id="modal-scanner" class="modal-backdrop">
+    <div class="modal-dialog modal-md">
+      <div class="modal-header">
+        <h3 class="modal-title">📷 QR Code Scanner & Diagnostic Verifier</h3>
+        <button class="modal-close" data-close="modal-scanner">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="scanner-tabs">
+          <button class="scanner-tab active" data-mode="camera">📹 Live Camera</button>
+          <button class="scanner-tab" data-mode="upload">📁 Upload Image</button>
+        </div>
+
+        <!-- Camera Section -->
+        <div id="scanner-camera-pane" class="scanner-pane active">
+          <div class="camera-wrapper">
+            <video id="scanner-video" class="scanner-video" playsinline></video>
+            <canvas id="scanner-canvas" style="display: none;"></canvas>
+            <div class="camera-reticle">
+              <div class="reticle-corner tl"></div>
+              <div class="reticle-corner tr"></div>
+              <div class="reticle-corner bl"></div>
+              <div class="reticle-corner br"></div>
+              <div class="reticle-laser"></div>
+            </div>
+          </div>
+          <div class="camera-controls">
+            <button id="btn-start-camera" class="btn-secondary">Start Camera</button>
+            <button id="btn-stop-camera" class="btn-secondary" style="display: none;">Stop Camera</button>
+          </div>
+        </div>
+
+        <!-- Image Upload Section -->
+        <div id="scanner-upload-pane" class="scanner-pane">
+          <div class="dropzone" id="scan-dropzone">
+            <input type="file" id="input-scan-file" accept="image/*" class="file-hidden">
+            <div class="dropzone-content">
+              <span class="drop-icon">🖼️</span>
+              <span class="drop-title">Drop any QR image here to scan</span>
+              <span class="drop-sub">PNG, JPEG, WebP, SVG screenshots</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Scan Result Card -->
+        <div id="scanner-result-card" class="scan-result-card" style="display: none;">
+          <div class="result-header">
+            <span class="result-badge">Decoded Successfully ✅</span>
+          </div>
+          <div id="scanner-result-payload" class="result-payload-text"></div>
+          <div class="result-actions">
+            <button id="btn-copy-scanned" class="btn-sm">📋 Copy Text</button>
+            <a id="btn-open-scanned-url" href="#" target="_blank" class="btn-sm btn-accent" style="display: none;">Open Link ↗</a>
+            <button id="btn-load-into-editor" class="btn-sm">Load Into Editor ✏️</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= MODAL 3: BATCH GENERATOR ================= -->
+  <div id="modal-batch" class="modal-backdrop">
+    <div class="modal-dialog modal-md">
+      <div class="modal-header">
+        <h3 class="modal-title">⚡ Batch QR Code Generator</h3>
+        <button class="modal-close" data-close="modal-batch">✕</button>
+      </div>
+      <div class="modal-body">
+        <p class="modal-desc">Enter multiple URLs or text strings (one per line). All generated QR codes will retain your current designer styles and will be packaged into a convenient .ZIP file.</p>
+        
+        <div class="form-group">
+          <label class="group-label" for="batch-textarea">List of Items (One URL/Text per line):</label>
+          <textarea id="batch-textarea" class="batch-textarea" rows="8" placeholder="https://example.com/item1&#10;https://example.com/item2&#10;https://example.com/item3&#10;WIFI:T:WPA;S:OfficeNet;P:pass123;;"></textarea>
+        </div>
+
+        <div id="batch-progress-box" class="batch-progress-box" style="display: none;">
+          <div class="progress-bar-wrap">
+            <div id="batch-progress-bar" class="progress-bar-fill" style="width: 0%;"></div>
+          </div>
+          <span id="batch-progress-text" class="progress-status-text">Processing 0 / 0...</span>
+        </div>
+
+        <button id="btn-start-batch" class="btn-primary-action">
+          <span>⚡</span> Generate & Download ZIP
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= MODAL 4: SAVED DESIGNS ================= -->
+  <div id="modal-saved" class="modal-backdrop">
+    <div class="modal-dialog modal-md">
+      <div class="modal-header">
+        <h3 class="modal-title">📁 My Saved QR Styles</h3>
+        <button class="modal-close" data-close="modal-saved">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="saved-actions-bar">
+          <div class="saved-actions-left">
+            <button id="btn-export-current-json" class="btn-sm btn-accent" title="Export current editor QR design to a .json file">
+              <span>📤</span> Export Current JSON
+            </button>
+            <button id="btn-export-all-json" class="btn-sm" title="Download backup of all saved designs in JSON format">
+              <span>📦</span> Backup All Designs
+            </button>
+            <button id="btn-import-json-trigger" class="btn-sm" title="Import a previously saved JSON configuration file">
+              <span>📥</span> Import Config JSON
+            </button>
+            <input type="file" id="input-import-json" accept=".json" class="file-hidden">
+          </div>
+          <button id="btn-toggle-json-help" class="btn-sm btn-subtle" title="Inspect JSON structure and copy template">
+            <span>ℹ️</span> JSON Format Guide
+          </button>
+        </div>
+
+        <!-- Collapsible JSON Format Schema Guide -->
+        <div id="json-format-helper" class="json-format-helper" style="display: none;">
+          <div class="jfh-header">
+            <div class="jfh-title">
+              <span class="jfh-badge">Schema Info</span>
+              <span>Supported JSON Structure (Save / Restore any design):</span>
+            </div>
+            <button id="btn-copy-sample-json" class="btn-xs">📋 Copy Template JSON</button>
+          </div>
+          <pre id="json-sample-preview" class="json-sample-preview"></pre>
+        </div>
+
+        <div id="saved-designs-list" class="saved-designs-list">
+          <!-- Rendered dynamically from history.js -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification System -->
+  <div id="toast-container" class="toast-container"></div>
+
+</body>
+</html>
